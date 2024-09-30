@@ -78,3 +78,19 @@ function clearCart() {
 window.onload = function() {
     updateCart();
 };
+
+function submitContactForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+        alert("Por favor, completa todos los campos.");
+        return false;
+    }
+
+    alert("Gracias por tu mensaje, " + name + ". Nos pondremos en contacto contigo pronto.");
+    document.getElementById('contactForm').reset(); // Limpiar el formulario
+    return false; // Evitar el envío real del formulario
+}
+
