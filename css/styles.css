@@ -1,1 +1,16 @@
-/* Initial CSS Stylesheet for LatinMemeShirts */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
