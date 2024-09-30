@@ -63,20 +63,25 @@
     </footer>
 
     <script>
-        // Datos simulados de los productos
-        const products = [
-            { id: 1, name: 'Playera Meme 1', description: 'Descripción del Meme 1', price: 15.00, image: 'img/meme1.jpg' },
-            { id: 2, name: 'Playera Meme 2', description: 'Descripción del Meme 2', price: 20.00, image: 'img/meme2.jpg' },
-            { id: 3, name: 'Playera Meme 3', description: 'Descripción del Meme 3', price: 25.00, image: 'img/meme3.jpg' }
-        ];
+    // Datos simulados de los productos
+    const products = [
+        { id: 1, name: 'Playera Meme 1', description: 'Descripción del Meme 1', price: 15.00, image: 'img/meme1.jpg' },
+        { id: 2, name: 'Playera Meme 2', description: 'Descripción del Meme 2', price: 20.00, image: 'img/meme2.jpg' },
+        { id: 3, name: 'Playera Meme 3', description: 'Descripción del Meme 3', price: 25.00, image: 'img/meme3.jpg' }
+    ];
 
-        // Obtener el productId desde la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = parseInt(urlParams.get('productId'));
+    // Obtener el productId desde la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('productId'));
 
-        // Encontrar el producto basado en el productId
+    // Verificar si el productId es válido
+    if (isNaN(productId)) {
+        alert("Producto no encontrado: ID inválido.");
+    } else {
+        // Buscar el producto basado en el productId
         const product = products.find(p => p.id === productId);
 
+        // Si el producto existe, mostrar sus detalles
         if (product) {
             document.getElementById('productName').innerText = product.name;
             document.getElementById('productDescription').innerText = product.description;
@@ -90,7 +95,7 @@
         } else {
             alert("Producto no encontrado");
         }
-    </script>
-    <script src="js/main.js"></script>
+    }
+</script>
 </body>
 </html>
