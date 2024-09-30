@@ -1,53 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LatinMemeShirts</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background-color: #1e90ff;
-      color: white;
-      padding: 20px;
-    }
-    .container {
-      padding: 20px;
-    }
-    footer {
-      margin-top: 30px;
-      background-color: #333;
-      color: white;
-      padding: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LatinMemeShirts - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <header>
-    <h1>LatinMemeShirts</h1>
-    <p>Custom T-Shirts Celebrating Latin American Culture & Memes</p>
-  </header>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LatinMemeShirts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-  <div class="container">
-    <h2>Our Collections</h2>
-    <p>Explore unique t-shirts inspired by the best Latin American memes and culture.</p>
-    
-    <h3>Top Categories:</h3>
-    <ul>
-      <li><strong>Colombian Memes</strong></li>
-      <li><strong>Mexican Sayings</strong></li>
-      <li><strong>Cuban Humor</strong></li>
-      <li><strong>Venezuelan Trends</strong></li>
-    </ul>
-  </div>
+    <main class="container mt-5">
+        <h1 class="text-center">¡Bienvenidos a LatinMemeShirts!</h1>
+        <p class="text-center">Las mejores playeras con memes latinoamericanos. ¡Explora nuestra colección!</p>
 
-  <footer>
-    <p>&copy; 2024 LatinMemeShirts - All Rights Reserved</p>
-  </footer>
+        <!-- Productos destacados -->
+        <section class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/meme1.jpg" class="card-img-top" alt="Meme 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Playera Meme 1</h5>
+                        <p class="card-text">$15.00 USD</p>
+                        <a href="product.html" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/meme2.jpg" class="card-img-top" alt="Meme 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Playera Meme 2</h5>
+                        <p class="card-text">$15.00 USD</p>
+                        <a href="product.html" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/meme3.jpg" class="card-img-top" alt="Meme 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Playera Meme 3</h5>
+                        <p class="card-text">$15.00 USD</p>
+                        <a href="product.html" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 LatinMemeShirts - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
