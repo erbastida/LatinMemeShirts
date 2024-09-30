@@ -26,12 +26,12 @@
     <main class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="img/meme1.jpg" class="img-fluid" alt="Playera Meme 1">
+                <img id="productImage" class="img-fluid" alt="Producto">
             </div>
             <div class="col-md-6">
-                <h1>Playera Meme 1</h1>
-                <p>Una divertida playera con un meme popular latinoamericano. ¡Perfecta para cualquier ocasión!</p>
-                <h4>$15.00 USD</h4>
+                <h1 id="productName"></h1>
+                <p id="productDescription"></p>
+                <h4 id="productPrice"></h4>
                 
                 <form>
                     <div class="form-group">
@@ -52,7 +52,7 @@
                             <option>Gris</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="addToCart(1, 'Playera Meme 1', 15.00)">Agregar al carrito</button>
+                    <button type="button" class="btn btn-primary" id="addToCartButton">Agregar al carrito</button>
                 </form>
             </div>
         </div>
@@ -62,8 +62,35 @@
         <p>&copy; 2024 LatinMemeShirts - Todos los derechos reservados.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Datos simulados de los productos
+        const products = [
+            { id: 1, name: 'Playera Meme 1', description: 'Descripción del Meme 1', price: 15.00, image: 'img/meme1.jpg' },
+            { id: 2, name: 'Playera Meme 2', description: 'Descripción del Meme 2', price: 20.00, image: 'img/meme2.jpg' },
+            { id: 3, name: 'Playera Meme 3', description: 'Descripción del Meme 3', price: 25.00, image: 'img/meme3.jpg' }
+        ];
+
+        // Obtener el productId desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('productId'));
+
+        // Encontrar el producto basado en el productId
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            document.getElementById('productName').innerText = product.name;
+            document.getElementById('productDescription').innerText = product.description;
+            document.getElementById('productPrice').innerText = `$${product.price.toFixed(2)} USD`;
+            document.getElementById('productImage').src = product.image;
+
+            // Agregar funcionalidad al botón de "Agregar al carrito"
+            document.getElementById('addToCartButton').onclick = function() {
+                addToCart(product.id, product.name, product.price);
+            };
+        } else {
+            alert("Producto no encontrado");
+        }
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
