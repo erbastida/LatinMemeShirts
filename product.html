@@ -61,41 +61,42 @@
     <footer class="text-center mt-5">
         <p>&copy; 2024 LatinMemeShirts - Todos los derechos reservados.</p>
     </footer>
+<script>
+        // Datos simulados de los productos, incluyendo el nuevo producto Meme 4
+        const products = [
+            { id: 1, name: 'Playera Meme 1', description: 'Descripción del Meme 1', price: 15.00, image: 'img/meme1.jpg' },
+            { id: 2, name: 'Playera Meme 2', description: 'Descripción del Meme 2', price: 15.00, image: 'img/meme2.jpg' },
+            { id: 3, name: 'Playera Meme 3', description: 'Descripción del Meme 3', price: 15.00, image: 'img/meme3.jpg' },
+            { id: 4, name: 'Playera Meme 4', description: 'Descripción del Meme 4', price: 18.00, image: 'img/meme4.jpg' }
+        ];
 
-    <script>
-    // Datos simulados de los productos
-    const products = [
-        { id: 1, name: 'Playera Meme 1', description: 'Descripción del Meme 1', price: 15.00, image: 'img/meme1.jpg' },
-        { id: 2, name: 'Playera Meme 2', description: 'Descripción del Meme 2', price: 20.00, image: 'img/meme2.jpg' },
-        { id: 3, name: 'Playera Meme 3', description: 'Descripción del Meme 3', price: 25.00, image: 'img/meme3.jpg' }
-    ];
+        // Obtener el productId desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('productId'));
 
-    // Obtener el productId desde la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = parseInt(urlParams.get('productId'));
-
-    // Verificar si el productId es válido
-    if (isNaN(productId)) {
-        alert("Producto no encontrado: ID inválido.");
-    } else {
-        // Buscar el producto basado en el productId
-        const product = products.find(p => p.id === productId);
-
-        // Si el producto existe, mostrar sus detalles
-        if (product) {
-            document.getElementById('productName').innerText = product.name;
-            document.getElementById('productDescription').innerText = product.description;
-            document.getElementById('productPrice').innerText = `$${product.price.toFixed(2)} USD`;
-            document.getElementById('productImage').src = product.image;
-
-            // Agregar funcionalidad al botón de "Agregar al carrito"
-            document.getElementById('addToCartButton').onclick = function() {
-                addToCart(product.id, product.name, product.price);
-            };
+        // Verificar si el productId es válido
+        if (isNaN(productId)) {
+            alert("Producto no encontrado: ID inválido.");
         } else {
-            alert("Producto no encontrado");
+            // Buscar el producto basado en el productId
+            const product = products.find(p => p.id === productId);
+
+            // Si el producto existe, mostrar sus detalles
+            if (product) {
+                document.getElementById('productName').innerText = product.name;
+                document.getElementById('productDescription').innerText = product.description;
+                document.getElementById('productPrice').innerText = `$${product.price.toFixed(2)} USD`;
+                document.getElementById('productImage').src = product.image;
+
+                // Agregar funcionalidad al botón de "Agregar al carrito"
+                document.getElementById('addToCartButton').onclick = function() {
+                    addToCart(product.id, product.name, product.price);
+                };
+            } else {
+                alert("Producto no encontrado");
+            }
         }
-    }
-</script>
+    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
