@@ -1,1 +1,3 @@
-// Initial JS for LatinMemeShirts
+function addToCart(productId) {
+    alert("Producto agregado al carrito!");
+}
